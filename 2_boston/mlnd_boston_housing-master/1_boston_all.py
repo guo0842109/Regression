@@ -62,6 +62,7 @@ print("Train test split success!")
 # TODO 3
 
 # 提示： 导入r2_score
+# r2_score拟合系数
 from sklearn.metrics import r2_score
 
 def performance_metric(y_true, y_predict):

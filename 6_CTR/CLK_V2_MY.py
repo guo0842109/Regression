@@ -218,7 +218,7 @@ train_df.groupby(['device_conn_type', 'click']).size().unstack().plot(kind='bar'
 plt.show()
 
 # In what regards the devices, it would be interesting to create a dataframe where the rows are device_ids, and the columns correspond to historic characteristics of that device usage, like which site categories it visited. This information could be plugged in each row, joining the dataframes by device_id.
-# 
+#
 # Due to time constraints, I was not able to further develop this topic. For an example of a project of mine see this [link](http://nbviewer.jupyter.org/github/diogojapinto/banking-project/blob/master/Banking%20Project%20-%20Diogo.ipynb) (bear in mind it was almost 2 years ago).
 
 # ### C1, C14-C21
@@ -253,7 +253,7 @@ train_df.groupby(['C18', 'click']).size().unstack().plot(kind='bar', stacked=Tru
 plt.show()
 
 # ## Prediction task
-# 
+#
 # Provided the knowledge gathered in the previous stage, lets now dive in the prediction task.
 # Firstly, data must be prepared so that it can be fed to machine learning algorithms.
 
@@ -358,7 +358,7 @@ def display_tree(dtc_classifier):
 
 
 # We are able to see that the site categories are recursively used to split the data. The tree also seeks to subset the time dimension into intervals to classify the data.
-# 
+#
 # When analysing this tree, and due to the dataset dimension, it is important to remember that the tree height
 
 # ### Gradient Boosting

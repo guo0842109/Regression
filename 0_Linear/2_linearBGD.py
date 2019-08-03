@@ -20,17 +20,20 @@ print (x_data.shape)
 print (y_data.shape)
 m, n = np.shape(x_data)
 theta = np.ones(n)
+costs = []
 
-
+# 批量梯度下降
 def batchGradientDescent(maxiter, x, y, theta, alpha):
     xTrains = x.transpose()
-    for i in range(0, maxiter):
-        hypothesis = np.dot(x, theta)
-        loss = (hypothesis - y)
+
+    for i in range(0, maxiter):#迭代次数
+        hypothesis = np.dot(x, theta)#预估值
+        loss = (hypothesis - y)#误差
         print (loss)
-        gradient = np.dot(xTrains, loss) / m
-        theta = theta - alpha * gradient
+        gradient = np.dot(xTrains, loss) / m #误差*x样本 除以m样本个数
+        theta = theta - alpha * gradient #之前的参数-步长*梯度
         cost = 1.0 / 2 * m * np.sum(np.square(np.dot(x, np.transpose(theta)) - y))
+        costs.append(cost)
         #print ("cost: %f" % cost)
     return theta
 
@@ -38,7 +41,8 @@ def batchGradientDescent(maxiter, x, y, theta, alpha):
 result = batchGradientDescent(100, x_data, y_data, theta, 0.00001)
 newy = np.dot(x_data, result)
 fig, ax = plt.subplots()
-ax.plot(x[:, 0], newy, 'k--')
-ax.plot(x[:, 0], x[:, 1], 'ro')
+# ax.plot(x[:, 0], newy, 'k--')
+# ax.plot(x[:, 0], x[:, 1], 'ro')
+ax.plot(costs)
 plt.show()
 print ("final: ", result)

@@ -33,7 +33,7 @@ def trainLogRegres(train_x, train_y, opts):
     for k in range(maxIter):
         if opts['optimizeType'] == 'gradDescent':  # gradient descent algorilthm
             output = sigmoid(train_x * weights)
-            error = train_y - output
+            error = train_y - output#实际值-预测值
             weights = weights + alpha * train_x.transpose() * error
         elif opts['optimizeType'] == 'stocGradDescent':  # stochastic gradient descent
             for i in range(numSamples):

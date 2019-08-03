@@ -28,11 +28,16 @@ regr.fit(diabetes_X_train, diabetes_y_train)
 
 # Make predictions using the testing set
 diabetes_y_pred = regr.predict(diabetes_X_test)
-
  
 # The mean squared error
 print("Mean squared error: %.2f"
       % mean_squared_error(diabetes_y_test, diabetes_y_pred))
+
+print(regr.coef_)
+print(regr.intercept_)
+# 截距
+# 参数
+
 
 # Plot outputs
 plt.scatter(diabetes_X_test, diabetes_y_test,  color='black')

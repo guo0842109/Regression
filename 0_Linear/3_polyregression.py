@@ -1,7 +1,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-
+#多项式回归
 x = np.random.uniform(-3,3, size=100)
 X = x.reshape(-1,1) #接下来的代码要区分好X和x
 y = 0.5 * x**2 +x +2 + np.random.normal(0,1,size=100)
